@@ -7,25 +7,24 @@ import java.util.*;
 public class Receipt {
 	private double total = 0;
 	private Formatter f = new Formatter(System.out);
-	private int nameWidth = 15;
-	private int qtyWidth = 5;
-	private int priceWidth = 10;
-private String replaceAllSting ="%-"+nameWidth+"s %"+qtyWidth+"s %"+priceWidth+"s\n";
+	private int firstWidth = 15;
+	private int secondWidth = 5;
+	private int thirdWidth = 10;
+	private double forthWidth = 15.15;
+	private double fithWidth = 10.2;
 	
 	public void printTitle() {
-		f.format(replaceAllSting, "Item", "Qty", "Price");
-		f.format(replaceAllSting, "----", "---", "-----");
+		f.format("%"+-firstWidth+"s"+ "%" +secondWidth+ "s" + "%" +thirdWidth +"s\n", "Item", "Qty", "Price");
+		f.format("%"+-firstWidth+ "s" + "%" + secondWidth + "s" + "%" + thirdWidth + "s\n", "----", "---", "-----");
 	}
-
 	public void print(String name, int qty, double price) {
-		f.format(replaceAllSting, name, qty, price);
+		f.format("%" +-forthWidth + "s" + "%" + secondWidth + "d" +  "%" + fithWidth + "f\n", name, qty, price);
 		total += price;
 	}
-
 	public void printTotal() {
-		f.format(replaceAllSting, "Tax","", total * 0.06);
-		f.format(replaceAllSting, "", "", "-----");
-		f.format(replaceAllSting, "Total", "", total * 1.06);
+		f.format("%"+-firstWidth+ "s" +  "%" + secondWidth + "s" + "%" +fithWidth  + "f\n", "Tax", "", total * 0.06);
+		f.format("%"+-firstWidth + "s" + "%" + secondWidth + "s" + "%" + thirdWidth + "s\n", "", "", "-----");
+		f.format("%"+-firstWidth+"s" + "%"+ secondWidth +"s" +"%"+fithWidth +"f\n", "Total", "", total * 1.06);
 	}
 
 	public static void main(String[] args) {
