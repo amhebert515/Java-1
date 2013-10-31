@@ -69,12 +69,12 @@ public class Contacts {
 	public void createContact() {
 		System.out.println("Enter a name");
 		String conName = scan.nextLine();
-		System.out.println("Enter an email");
-		String conEmail = scan.nextLine();
-		System.out.println("Enter a phone number");
+		System.out.println("Enter an phone number");
 		String conPhone = scan.nextLine();
+		System.out.println("Enter a birthday");
+		String conBday = scan.nextLine();
 
-		conList.add(new Contact(new String[] { conName, conEmail, conPhone }));
+		conList.add(new Contact(new String[] { conName, conPhone, conBday }));
 
 	}
 
@@ -117,8 +117,8 @@ public class Contacts {
 		System.out.println("Select a number.");
 		int conCho = scan.nextInt();
 		System.out.println("Name: " + conList.get(conCho).name);
-		System.out.println("Email: " + conList.get(conCho).email);
 		System.out.println("Phone: " + conList.get(conCho).phone);
+		System.out.println("BirthDay: " + conList.get(conCho).bDay);
 		System.out.println("______________________");
 	}
 }

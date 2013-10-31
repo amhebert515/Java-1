@@ -2,19 +2,19 @@ package ahebert.fileIO;
 
 public class Contact {
 	
-	public String name,email,phone;
+	public String name,phone,bDay;
 	
 	Contact(String[] conInfo)
 	{
 		name = conInfo[0];
-		email = conInfo[1];
-		phone = conInfo[2];
+		phone = conInfo[1];
+		bDay = conInfo[2];
 		
 	}
 	
 	@Override
 	public String toString()
 	{
-		return name+","+email+","+phone;
+		return name+","+phone+","+bDay;
 	}
 }
